@@ -1,0 +1,253 @@
+body {
+  background-color: #133591;
+  color: white;
+  margin: 0;
+}
+
+form {
+  background-color: #133591;
+  color: white;
+  padding: 20px 0 60px 0;
+  font-weight: bold;
+}
+h1 {
+  color: white;
+  margin-bottom: 52px;
+  text-align: center;
+}
+input {
+  border: none;
+  padding: 12px 0 12px 10px;
+  width: 100%;
+  font-size: 16px;
+}
+input:focus-visible {
+  outline: none;
+}
+div {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+button {
+  background-color: #6f90eb;
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+}
+span {
+  color: white;
+}
+#password {
+  margin-right: -10px;
+}
+.form_wrapper {
+  margin: 0 50px;
+}
+.error {
+  color: rgb(216, 10, 10);
+  font-size: 14px;
+  display: none;
+  font-style: italic;
+}
+
+#gender {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#gender input {
+  width: 14px;
+}
+
+#checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
+}
+#checkbox input {
+  width: 16px;
+}
+#conditions {
+  margin-bottom: 24px;
+  color: white;
+}
+#obligatoires {
+  margin-bottom: 24px;
+  color: white;
+  text-align: center;
+}
+
+#password-wrapper,
+#confirmation-password-wrapper {
+  position: relative;
+}
+#emailConfirmationError {
+  display: none;
+}
+#passwordError {
+  display: none;
+}
+#validation_popup {
+  display: none;
+  font-size: 20px;
+}
+#validation_popup div {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  color: white;
+}
+.caractere {
+  font-size: 14px;
+}
+.souligne {
+  font-size: 14px;
+  text-decoration: underline;
+}
+#password_format {
+  display: none;
+}
+#visibility img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 11px;
+  top: 58px;
+}
+#on {
+  cursor: pointer;
+}
+#off {
+  display: none;
+  cursor: pointer;
+}
+#visibility {
+  display: flex;
+}
+#on1,
+#off1 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 11px;
+  top: 47px;
+  cursor: pointer;
+}
+#visibility1 {
+  display: flex;
+}
+#validation_popup {
+  color: #2b0303c7;
+  background-color: #133591;
+  font-size: 18px;
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 40px;
+}
+/* Footer */
+footer {
+  margin-top: 50px;
+  background-color: white;
+  text-align: center;
+  color: #0e2f82;
+  padding: 20px;
+}
+
+footer .social_media img {
+  height: 20px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+.reserve {
+  margin-top: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  div {
+    font-size: 18px;
+    margin: 12px 0 6px 0;
+  }
+  #name_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  /* > vise que le element( ex: div),pas les les sous-div  */
+  #name_wrapper > div {
+    width: 100%;
+  }
+  #row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  #gender_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    flex-flow: row-reverse;
+  }
+  #gender_wrapper div {
+    width: 50%;
+  }
+  #location_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  #location_wrapper > div {
+    width: 100%;
+  }
+  #telephone_input_wrapper > input {
+    width: 49%;
+  }
+  #email_input_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  #email_input_wrapper > div {
+    width: 100%;
+  }
+
+  #Password {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  #Password > div {
+    width: 100%;
+  }
+  .caractere {
+    font-size: 20px;
+  }
+
+  #obligatoires {
+    text-align: left;
+  }
+  #validation_popup {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  #validation_popup {
+    font-size: 30px;
+  }
+}

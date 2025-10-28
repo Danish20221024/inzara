@@ -1,0 +1,29 @@
+/*Header*/
+@font-face {
+  font-family: Barlow-Regular;
+  src: url(./font/Barlow/Barlow-Regular.ttf);
+}
+@font-face {
+  font-family: Karma-SemiBold;
+  src: url(./font/Karma/Karma-SemiBold.ttf);
+}
+body {
+  font-family: Barlow-Regular;
+  margin: 0;
+  background-image: url(../Images/backdgroundImage.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Karma-SemiBold;
+}
