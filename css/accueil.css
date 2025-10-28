@@ -1,3 +1,11 @@
+main {
+  margin: 20px 20px;
+}
+h1 {
+  text-align: center;
+  color: var(--blue-500);
+}
+
 /* header title */
 .all_collection {
   display: flex;
@@ -8,7 +16,7 @@
 }
 /* menu categories list in the  menu-popup */
 .categories_list {
-  background-color: #2b63f2b0;
+  background-color: var(--blue-500);
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 10px;
@@ -22,7 +30,7 @@
   padding-left: 0;
 }
 .sub_categories a {
-  color: #0e2f82;
+  color: var(--main-blue);
   text-decoration: none;
 }
 .categories_lists {
@@ -35,13 +43,7 @@
 .menu_list_categories {
   font-size: 20px;
 }
-main {
-  margin: 20px 20px;
-}
-h1 {
-  text-align: center;
-  color: #1549cb;
-}
+
 .display_card {
   display: flex;
   gap: 10px;
@@ -49,7 +51,7 @@ h1 {
   margin-left: 20px;
   overflow: scroll;
   scrollbar-width: thin;
-  scrollbar-color: #0339a3 #b6c8f7;
+  scrollbar-color: var(--blue-500) var(--blue-100);
   margin-top: 0;
 }
 .display_card img {
@@ -61,13 +63,13 @@ h1 {
 }
 .collection_section {
   display: block;
-  background-color: #b6c8f7;
+  background-color: var(--blue-100);
   margin: 20px 0;
   padding: 10px 0;
   margin-bottom: 20px;
 }
 .collection_title {
-  background-color: #ffffff;
+  background-color: white;
   color: #000;
   border-radius: 10px;
   display: inline-block;
@@ -84,7 +86,7 @@ h1 {
 .menu_article_pop {
   position: fixed;
   inset: 0;
-  background-color: #3568e9;
+  background-color: var(--blue-500);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -95,7 +97,7 @@ h1 {
   z-index: 2000;
 }
 .menu_accueil_pop.active {
-  background-color: #3568e9;
+  background-color: var(--blue-500);
   transform: translate(0);
   opacity: 1;
 }
@@ -138,7 +140,7 @@ h1 {
   font-size: 16px;
   color: white;
   border: none;
-  background-color: #0740c5;
+  background-color: var(--blue-500);
   font-weight: bold;
   cursor: pointer;
 }
@@ -160,7 +162,7 @@ h1 {
 }
 .menu_article_pop {
   display: none;
-  background-color: #3568e9;
+  background-color: var(--blue-500);
   height: 100vh;
 }
 .button_close {

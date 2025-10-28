@@ -11,14 +11,14 @@ Reset et styles de base * {
 body {
   font-family: "karma-medium";
   line-height: 1.6;
-  color: #0e2f82;
+  color: var(--main-blue);
   margin: 0;
   background-color: white;
 }
 
 .style {
   padding: 20px;
-  color: #0e2f82;
+  color: var(--main-blue);
   line-height: 1.6;
   padding-top: 0;
   margin-bottom: 0;

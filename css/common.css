@@ -7,6 +7,13 @@
   font-family: Karma-SemiBold;
   src: url(./font/Karma/Karma-SemiBold.ttf);
 }
+:root {
+  --main-blue: #0e2f82;
+  --blue-500: #1549cb;
+  --blue-400: #6f90eb;
+  --red-error: rgb(216, 10, 10);
+  --blue-100: #b6c8f7;
+}
 body {
   font-family: Barlow-Regular;
   margin: 0;

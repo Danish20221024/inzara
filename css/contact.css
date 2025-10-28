@@ -1,11 +1,11 @@
 body {
-  background-color: #133591;
+  background-color: var(--main-blue);
   color: white;
   margin: 0;
 }
 
 form {
-  background-color: #133591;
+  background-color: var(--main-blue);
   color: white;
   padding: 20px 0 60px 0;
   font-weight: bold;
@@ -29,7 +29,7 @@ div {
   margin-bottom: 10px;
 }
 button {
-  background-color: #6f90eb;
+  background-color: var(--blue-400);
   border: none;
   color: white;
   font-size: 28px;
@@ -47,7 +47,7 @@ span {
   margin: 0 50px;
 }
 .error {
-  color: rgb(216, 10, 10);
+  color: var(--red-error);
   font-size: 14px;
   display: none;
   font-style: italic;
@@ -142,7 +142,7 @@ span {
 }
 #validation_popup {
   color: #2b0303c7;
-  background-color: #133591;
+  background-color: var(--main-blue);
   font-size: 18px;
   display: none;
   position: fixed;
@@ -158,7 +158,7 @@ footer {
   margin-top: 50px;
   background-color: white;
   text-align: center;
-  color: #0e2f82;
+  color: var(--main-blue);
   padding: 20px;
 }
 

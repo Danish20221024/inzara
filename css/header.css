@@ -49,7 +49,7 @@ header {
   cursor: pointer;
   position: absolute;
   top: 20px;
-  background-color: #0e2f82;
+  background-color: var(--main-blue);
   border-radius: 50%;
   border: none;
   font-size: 20px;
@@ -92,7 +92,7 @@ header {
     text-decoration: none;
   }
   .menu_accueil a {
-    color: #0e2f82;
+    color: var(--main-blue);
     text-decoration: none;
   }
 }

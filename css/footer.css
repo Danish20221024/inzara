@@ -1,5 +1,5 @@
 footer {
-  background-color: #0e2f82;
+  background-color: var(--main-blue);
   text-align: center;
   color: #ffffff;
   padding: 20px;
