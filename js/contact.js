@@ -1,18 +1,12 @@
 let form = document.querySelector("#form");
-let postalCode = document.querySelector("#postalCode");
-let postalCodeError = document.querySelector("#postalCodeError");
 let telephoneNumber = document.querySelector("#telephoneInput");
 let telephoneFormatError = document.querySelector("#telephoneFormatError");
 let email = document.querySelector("#email");
 let emailFormatError = document.querySelector("#emailFormatError");
 let confirmationEmail = document.querySelector("#confirmationEmail");
 let emailConfirmationError = document.querySelector("#emailConfirmationError");
-let motDePasse = document.querySelector("#password");
-let passWordFormatError = document.querySelector("#passwordFormatError");
-let passWordConfirmation = document.querySelector("#confirmationPassword");
-let passWordError = document.querySelector("#passWordError");
 let btnsubmit = document.querySelector("#submit");
-let validation_popup = document.querySelector("#validation_popup");
+let validation_message = document.querySelector("#validation-message");
 let inputPassword = document.querySelector("input#password");
 let password_format = document.querySelector("#password_format");
 let btnOn = document.querySelector("#on");
@@ -20,37 +14,15 @@ let btnOff = document.querySelector("#off");
 let btnOn1 = document.querySelector("#on1");
 let btnOff1 = document.querySelector("#off1");
 
-// Regex (à chercher sur internet)
-const postalCodeRegex = /^[0-9]{5}$/;
+// Regex
 const phoneNumberRegex =
   /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/;
 const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
-const motDePasseRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
-// //     ^ : Indique le début de la chaîne.
-//   (?=.*[a-z]) : Au moins une lettre minuscule.
-//   (?=.*[A-Z]) : Au moins une lettre majuscule.
-//   (?=.*\d) : Au moins un chiffre.
-//   (?=.*[@$!%*?&]) : Au moins un caractère spécial parmi @$!%*?&.
-//   [A-Za-z\d@$!%*?&]{8,} : La chaîne doit contenir au moins 8 caractères avec les caractères spécifiés.
-//   $ : Indique la fin de la chaîne.
-
-// Code postal
-postalCode.addEventListener("input", function () {
-  if (postalCode.value.match(postalCodeRegex)) {
-    console.log("C'est bon !");
-    postalCode.style.border = "0px";
-    postalCodeError.style.display = "none";
-  } else {
-    postalCodeError.style.display = "block";
-    postalCode.style.border = "1px solid red";
-    console.log("C'est pas bon!");
-  }
-});
 
 // numero de telephone
 telephoneNumber.addEventListener("input", function () {
-  if (telephoneNumber.value.match(phoneNumberRegex)) {
+  console.log(telephoneNumber);
+  if (!telephoneNumber.value || telephoneNumber.value.match(phoneNumberRegex)) {
     console.log("BON FORMAT !");
     telephoneNumber.style.border = "0px";
     telephoneFormatError.style.display = "none";
@@ -78,59 +50,24 @@ email.addEventListener("input", function () {
 confirmationEmail.addEventListener("input", function () {
   if (confirmationEmail.value === email.value) {
     console.log("match mail");
-    confirmationEmail.style.border = "0px";
     emailConfirmationError.style.display = "none";
   } else {
-    confirmationEmail.style.border = "1px solid red";
     console.log("C'est pas bon!");
     emailConfirmationError.style.display = "block";
   }
 });
 
-// mot de passe
-motDePasse.addEventListener("input", function () {
-  console.log("motDePasse", motDePasse);
-  if (motDePasse.value.match(motDePasseRegex)) {
-    console.log("BON FORMAT !");
-    motDePasse.style.border = "0px";
-    passWordFormatError.style.display = "none";
-  } else {
-    motDePasse.style.border = "1px solid red";
-    console.log("C'est pas bon!");
-    passWordFormatError.style.display = "block";
-  }
-});
-
-// confirmation de mot de passe
-passWordConfirmation.addEventListener("input", function () {
-  if (passWordConfirmation.value === motDePasse.value) {
-    console.log("BON FORMAT !");
-    motDePasse.style.border = "0px";
-    passWordError.style.display = "none";
-  } else {
-    passWordConfirmation.style.border = "1px solid red";
-    console.log("C'est pas bon!");
-    passWordError.style.display = "block";
-  }
-});
 // button valider
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-btnsubmit.addEventListener("click", function () {
-  error = false;
-  if (!postalCode.value.match(postalCodeRegex)) {
-    postalCodeError.style.display = "block";
-    error = true;
-  }
-  if (!telephoneNumber.value.match(phoneNumberRegex)) {
+  let error = false;
+  if (telephoneNumber.value && !telephoneNumber.value.match(phoneNumberRegex)) {
     telephoneFormatError.style.display = "block";
     error = true;
   }
   if (!email.value.match(emailRegex)) {
     emailFormatError.style.display = "block";
-    error = true;
-  }
-  if (!motDePasse.value.match(motDePasseRegex)) {
-    passWordFormatError.style.display = "block";
     error = true;
   }
 
@@ -139,56 +76,11 @@ btnsubmit.addEventListener("click", function () {
     emailConfirmationError.style.display = "block";
     error = true;
   }
-  if (motDePasse.value !== confirmationPassword.value) {
-    console.log("les mots de passe ne correspond pas");
-    passWordError.style.display = "block";
-    error = true;
-  }
-  // "!"= s'il y a pas d'erreur, affichez "votre mail a été bien envoyer"
+
+  // s'il y a pas d'erreur,  "votre mail a été bien envoyer"
   if (!error) {
     console.log("Votre mail a été bien envoyé");
-    validation_popup.style.display = "block";
+    validation_message.style.display = "block";
+    form.reset();
   }
-});
-// let validation_popup = document.querySelector("#validation_popup");
-// btnsubmit.addEventListener("click", function () {
-//   console.log("Click sur Fermer");
-//   // validation_popup.style.display = "block";
-//   form.style.display = "none";
-// });
-
-inputPassword.addEventListener("mouseover", function () {
-  password_format.style.display = "block";
-  // btnOn1.style.display = "none";
-  // btnOff1.style.display = "none";
-});
-inputPassword.addEventListener("mouseout", function () {
-  password_format.style.display = "none";
-  //   btnOn1.style.display = "block";
-  //   btnOff1.style.display = "block";
-});
-// button mot de passe
-btnOn.addEventListener("click", function () {
-  console.log("click");
-  btnOn.style.display = "none";
-  btnOff.style.display = "block";
-  motDePasse.type = "text";
-});
-btnOff.addEventListener("click", function () {
-  btnOff.style.display = "none";
-  btnOn.style.display = "block";
-  motDePasse.type = "password";
-});
-
-// button confimation de mot de passe
-btnOn1.addEventListener("click", function () {
-  console.log("click");
-  btnOn1.style.display = "none";
-  btnOff1.style.display = "block";
-  passWordConfirmation.type = "text";
-});
-btnOff1.addEventListener("click", function () {
-  btnOff1.style.display = "none";
-  btnOn1.style.display = "block";
-  passWordConfirmation.type = "password";
 });

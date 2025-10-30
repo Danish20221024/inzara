@@ -9,6 +9,7 @@ form {
   color: white;
   padding: 20px 0 60px 0;
   font-weight: bold;
+  border-radius: 20px;
 }
 h1 {
   color: white;
@@ -20,6 +21,7 @@ input {
   padding: 12px 0 12px 10px;
   width: 100%;
   font-size: 16px;
+  border-radius: 10px;
 }
 input:focus-visible {
   outline: none;
@@ -36,30 +38,19 @@ button {
   padding: 10px 0;
   width: 100%;
   cursor: pointer;
+  border-radius: 10px;
 }
 span {
   color: white;
 }
-#password {
-  margin-right: -10px;
-}
 .form_wrapper {
-  margin: 0 50px;
+  margin: 10%;
 }
 .error {
   color: var(--red-error);
   font-size: 14px;
   display: none;
   font-style: italic;
-}
-
-#gender {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-#gender input {
-  width: 14px;
 }
 
 #checkbox {
@@ -81,35 +72,12 @@ span {
   text-align: center;
 }
 
-#password-wrapper,
 #confirmation-password-wrapper {
   position: relative;
 }
 #emailConfirmationError {
   display: none;
-}
-#passwordError {
-  display: none;
-}
-#validation_popup {
-  display: none;
-  font-size: 20px;
-}
-#validation_popup div {
-  position: relative;
-  top: 200px;
-  text-align: center;
-  color: white;
-}
-.caractere {
-  font-size: 14px;
-}
-.souligne {
-  font-size: 14px;
-  text-decoration: underline;
-}
-#password_format {
-  display: none;
+  border: 1px solid var(--red-error);
 }
 #visibility img {
   width: 20px;
@@ -140,39 +108,30 @@ span {
 #visibility1 {
   display: flex;
 }
-#validation_popup {
-  color: #2b0303c7;
-  background-color: var(--main-blue);
-  font-size: 18px;
-  display: none;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  margin: 0;
-  font-size: 40px;
-}
-/* Footer */
-footer {
-  margin-top: 50px;
-  background-color: white;
-  text-align: center;
-  color: var(--main-blue);
-  padding: 20px;
-}
 
-footer .social_media img {
-  height: 20px;
-  margin: 0 5px;
-  vertical-align: middle;
-}
-.reserve {
+textarea {
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-family: inherit; /* garde la même police que le reste */
+  border: none;
+  border-radius: 10px;
+  resize: vertical; /* permet d'agrandir verticalement si besoin */
+  box-sizing: border-box;
   margin-top: 10px;
-  color: white;
-  font-size: 14px;
 }
 
+textarea:focus-visible {
+  outline: none; /* enlève le contour bleu par défaut */
+}
+#validation-message {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--green-success);
+  text-align: center;
+}
 @media (min-width: 768px) {
   div {
     font-size: 18px;
@@ -184,7 +143,7 @@ footer .social_media img {
     justify-content: space-between;
     gap: 40px;
   }
-  /* > vise que le element( ex: div),pas les les sous-div  */
+  /* vise que le element( ex: div),pas les les sous-div  */
   #name_wrapper > div {
     width: 100%;
   }
@@ -193,16 +152,6 @@ footer .social_media img {
     flex-direction: row;
     justify-content: space-between;
     gap: 40px;
-  }
-  #gender_wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 40px;
-    flex-flow: row-reverse;
-  }
-  #gender_wrapper div {
-    width: 50%;
   }
   #location_wrapper {
     display: flex;
@@ -214,7 +163,7 @@ footer .social_media img {
     width: 100%;
   }
   #telephone_input_wrapper > input {
-    width: 49%;
+    width: 47%;
   }
   #email_input_wrapper {
     display: flex;
@@ -226,28 +175,14 @@ footer .social_media img {
     width: 100%;
   }
 
-  #Password {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 40px;
-  }
-  #Password > div {
-    width: 100%;
-  }
-  .caractere {
-    font-size: 20px;
-  }
-
   #obligatoires {
     text-align: left;
   }
-  #validation_popup {
-    font-size: 24px;
+
+  textarea {
+    padding-bottom: 60px;
   }
-}
-@media (min-width: 1024px) {
-  #validation_popup {
-    font-size: 30px;
+  .form_wrapper {
+    margin: 0 70px;
   }
 }

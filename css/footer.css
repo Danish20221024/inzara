@@ -25,9 +25,12 @@ footer {
 }
 
 .reserve {
-  margin-top: 10px;
+  margin-top: 30px;
   color: white;
   font-size: 14px;
+}
+.contacts {
+  margin: 15px 0;
 }
 @media (min-width: 768px) {
   .footer_wrapper {
@@ -35,7 +38,7 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     align-items: center;
   }
   .social_media img {
@@ -55,9 +58,6 @@ footer {
   }
 }
 @media (min-width: 1024px) {
-  .footer_wrapper {
-    font-size: 24px;
-  }
   social_media img {
     width: 36px;
     height: 36px;

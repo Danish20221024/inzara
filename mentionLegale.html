@@ -3,17 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="INZARA, la mode qui bouge ! Découvrez nos vêtements stylés et accessibles pour toute la famille."
+    />
+    <title>Mention légales - INZARA</title>
+    <link rel="icon" type="image/webp" href="./Images/LOGO.webp" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="INZARA, la mode qui bouge ! Découvrez nos vêtements stylés et accessibles pour toute la famille — femme, homme et enfant. Confort, qualité et originalité au rendez-vous."
+    />
+    <link rel="icon" type="image/webp" href="./Images/LOGO.webp" />
     <title>Mentions légales - INZARA</title>
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/accueil.css" />
+    <link rel="stylesheet" href="./css/mentionLegale.css" />
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="logo_wrapper">
-        <img class="logo" src="./Images/logo.webp" alt="logo INZARA" />
+        <a href="./index.html">
+          <img class="logo" src="./Images/logo.webp" alt="logo INZARA" />
+        </a>
       </div>
       <div class="menu_wrapper">
         <img
@@ -28,13 +42,12 @@
         <div><a href="./contact.html">Contact</a></div>
       </div>
     </header>
-    <!-- main content -->
     <main>
       <section>
         <div>
           <h1>Mentions légales</h1>
         </div>
-        <div class="style">
+        <div id="main-content">
           <h3>Éditeur du site</h3>
           <p>
             Nom du site : INZARA<br />
@@ -99,9 +112,13 @@
         </div>
         <div class="contacts">
           <div class="enseigne">INZARA</div>
-          <div class="contact">(+33) 06 06 85 65 55</div>
+          <div class="contact">06 06 85 65 55</div>
           <div class="email_wrapper">inzara@gmail.com</div>
         </div>
+        <title>Formulaire de contact</title>
+        <link rel="icon" type="image/webp" href="./Images/LOGO.webp" />
+
+        <link rel="stylesheet" href="./css/common.css" />
 
         <!-- réseau sociaux -->
         <div class="social_media">
@@ -129,5 +146,28 @@
       </div>
       <div class="reserve">&copy; 2025 INZARA. Tous droits réservés.</div>
     </footer>
+    <!-- menu -->
+    <div id="menu_popup">
+      <div class="categories" id="ouvrir">
+        <ul class="sub_categories">
+          <li class="categories_lists accueil_list">
+            <a href="./index.html">Accueil</a>
+          </li>
+          <li class="categories_lists contact_list">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="categories_lists mention_legales_list">
+            <a href="./mentionLegale.html">Mentions légales</a>
+          </li>
+        </ul>
+        <button id="buttonClose">X</button>
+      </div>
+    </div>
+
+    <script src="./js/header.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js"
+      defer
+    ></script>
   </body>
 </html>

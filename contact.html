@@ -2,21 +2,25 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="Formulaire de contact"
-      content="width=device-width, initial-scale=1.0"
+      name="description"
+      content="INZARA, la mode qui bouge ! Découvrez nos vêtements stylés et accessibles pour toute la famille."
     />
     <title>Formulaire de contact</title>
-    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="icon" type="image/webp" href="./Images/LOGO.webp" />
+
+    <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
-    <link rel="stylesheet" href="./css/accueil.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="logo_wrapper">
-        <img class="logo" src="./Images/logo.webp" alt="logo INZARA" />
+        <a href="./index.html">
+          <img class="logo" src="./Images/logo.webp" alt="logo INZARA" />
+        </a>
       </div>
       <div class="menu_wrapper">
         <img
@@ -31,161 +35,82 @@
         <div><a href="./contact.html">Contact</a></div>
       </div>
     </header>
-
-    <!-- formulaire de contact -->
-    <form id="form" action="">
-      <div class="form_wrapper">
-        <h1>FORMULAIRE D'INSCRIPTION</h1>
-        <div id="name_wrapper">
-          <div>
-            <div>Nom*</div>
-            <input type="text" />
-          </div>
-          <div>
-            <div>Prénom*</div>
-            <input type="text" />
-          </div>
-        </div>
-        <div id="gender_wrapper">
-          <div>
-            <div>Genre</div>
-            <div id="gender">
-              <input type="radio" name="gender" class="gender" />
-
-              <div class="gender">Homme</div>
-
-              <input type="radio" name="gender" class="gender" />
-              <div>Femme</div>
+    <main>
+      <form id="form" action="">
+        <div class="form_wrapper">
+          <h1>Nous contacter</h1>
+          <div id="name_wrapper">
+            <div>
+              <div>Nom*</div>
+              <input type="text" />
             </div>
           </div>
-          <div>
-            <div id="naissance">Date de naissance*</div>
-            <input type="date" id="naissance" />
-          </div>
-        </div>
-        <div id="location_wrapper">
-          <div>
-            <div>Pays*</div>
-            <input type="text" />
-          </div>
-          <div>
-            <div id="codePostale">Code postal*</div>
-            <input type="number" name="postalCode" id="postalCode" />
-            <div class="error" id="postalCodeError">
-              Veuillez entrer le bon format
+          <div id="email_input_wrapper">
+            <div>
+              <div>Adresse mail*</div>
+              <input type="email" name="email" id="email" />
+              <div class="error" id="emailFormatError">
+                Veuillez entrer le bon format
+              </div>
             </div>
-          </div>
-        </div>
-        <div id="Adress_wrapper">
-          <div>Adresse*</div>
-          <input type="text" />
-        </div>
-        <div id="telephone_input_wrapper">
-          <div>Numéro de téléphone*</div>
-          <input type="number" name="telephoneInput" id="telephoneInput" />
-          <div class="error" id="telephoneFormatError">
-            Veuillez entrer le bon format
-          </div>
-        </div>
-        <div id="email_input_wrapper">
-          <div>
-            <div>Adresse mail*</div>
-            <input type="email" name="email" id="email" />
-            <div class="error" id="emailFormatError">
-              Veuillez entrer le bon format
-            </div>
-          </div>
-          <div id="confirmationemail">
-            <div>Confirmation de mail*</div>
-            <input
-              type="email"
-              name="Confirmation email"
-              id="confirmationEmail"
-            />
-            <div class="error" id="emailConfirmationError">
-              Email n'est pas identique
-            </div>
-          </div>
-        </div>
-        <div id="password-wrapper">
-          <div>
-            <div>Mot de passe*</div>
-            <div id="visibility">
+            <div id="confirmationemail">
+              <div>Confirmation de mail*</div>
               <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder=" mot de passe"
+                type="email"
+                name="Confirmation email"
+                id="confirmationEmail"
               />
-              <img
-                src="./Images/visibilityOff.webp"
-                alt="icon non d'affichage mot de passe"
-                id="off"
-              />
-              <img
-                src="./Images/visibiliyOn.webp"
-                alt="icon d'affichage mot de passe"
-                id="on"
-              />
+              <div class="error" id="emailConfirmationError">
+                Email n'est pas identique
+              </div>
             </div>
           </div>
-          <div class="error" id="passwordFormatError">
-            Veuillez entrer le bon format
+          <div id="telephone_input_wrapper">
+            <div>Numéro de téléphone</div>
+            <input type="text" name="telephoneInput" id="telephoneInput" />
+            <div class="error" id="telephoneFormatError">
+              Veuillez entrer le bon format
+            </div>
+          </div>
+          <div id="name_wrapper">
+            <div>
+              <div>Sujet*</div>
+              <input type="text" />
+            </div>
           </div>
 
-          <div id="password_format">
-            <ul>
-              <span class="souligne">Le mot de passe doit contenir:</span>
-              <li class="caractere">Au moins une lettre minuscule.</li>
-              <li class="caractere">Au moins une lettre majuscule.</li>
-              <li class="caractere">Au moins un chiffre.</li>
-              <li class="caractere">
-                Au moins un caractère spécial parmi @$!%*?&.
-              </li>
-              <li class="caractere">Au moins 12 caractères.</li>
-            </ul>
+          <div id="message_wrapper">
+            <label for="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Votre message..."
+              required
+            ></textarea>
           </div>
+          <div id="checkbox">
+            <input type="checkbox" />
+            <div id="conditions">
+              En cochant cette case vous acceptez nos
+              <a href="./mentionLegale.html"> conditions d'utilisation.</a
+              ><span>*</span>
+            </div>
+          </div>
+          <div id="obligatoires">
+            <span>*</span>Ces champs sont obligatoires
+          </div>
+          <div
+            class="h-captcha"
+            data-sitekey="10000000-ffff-ffff-ffff-000000000001"
+          ></div>
+          <button type="submit" id="submit">VALIDER</button>
         </div>
-        <div id="confirmation-password-wrapper">
-          <div id="ConfirmationPassword">Confirmation du mot de passe</div>
-          <input
-            type="password"
-            name="confirmationpassword"
-            id="confirmationPassword"
-            placeholder="mot de passe"
-          />
-          <div id="visibility1">
-            <img
-              src="./Images/visibilityOff.webp"
-              alt="icon non d'affichage mot de passe"
-              id="off1"
-            />
-            <img
-              src="./Images/visibiliyOn.webp"
-              alt="icon d'affichage mot de passe"
-              id="on1"
-            />
-          </div>
-          <div class="error" id="passWordError">
-            Le mot de passe n'est pas identique
-          </div>
+        <div id="validation-message">
+          <div>Votre mail a été bien envoyé !</div>
         </div>
-
-        <div id="checkbox">
-          <input type="checkbox" />
-          <div id="conditions">
-            En cochant cette case vous acceptez nos conditions
-            d'utilisation.<span>*</span>
-          </div>
-        </div>
-        <div id="obligatoires"><span>*</span>Ces champs sont obligatoires</div>
-
-        <button type="submit" id="submit">VALIDER</button>
-      </div>
-      <div id="validation_popup">
-        <div>Votre mail a été bien envoyé.</div>
-      </div>
-    </form>
+      </form>
+    </main>
     <footer>
       <!-- screen414 -->
       <div class="footer_wrapper">
@@ -198,7 +123,7 @@
         </div>
         <div class="contacts">
           <div class="enseigne">INZARA</div>
-          <div class="contact">(+33) 06 06 85 65 55</div>
+          <div class="contact">06 06 85 65 55</div>
           <div class="email_wrapper">inzara@gmail.com</div>
         </div>
 
@@ -228,6 +153,30 @@
       </div>
       <div class="reserve">&copy; 2025 INZARA. Tous droits réservés.</div>
     </footer>
+    <!-- menu -->
+    <div id="menu_popup">
+      <div class="categories" id="ouvrir">
+        <ul class="sub_categories">
+          <li class="categories_lists accueil_list">
+            <a href="./index.html">Accueil</a>
+          </li>
+          <li class="categories_lists contact_list">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="categories_lists mention_legales_list">
+            <a href="./mentionLegale.html">Mentions légales</a>
+          </li>
+        </ul>
+        <button id="buttonClose">X</button>
+      </div>
+    </div>
+
+    <script src="./js/header.js"></script>
     <script src="./js/contact.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sienna-accessibility@latest/dist/sienna-accessibility.umd.js"
+      defer
+    ></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   </body>
 </html>

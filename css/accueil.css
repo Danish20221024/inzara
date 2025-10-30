@@ -1,11 +1,13 @@
-main {
-  margin: 20px 20px;
-}
 h1 {
   text-align: center;
   color: var(--blue-500);
 }
-
+#moto {
+  font-style: italic;
+  text-align: center;
+  font-weight: normal;
+  font-size: 14px;
+}
 /* header title */
 .all_collection {
   display: flex;
@@ -83,7 +85,7 @@ h1 {
   justify-content: center;
 }
 
-.menu_article_pop {
+#menu-article-popup {
   position: fixed;
   inset: 0;
   background-color: var(--blue-500);
@@ -101,18 +103,18 @@ h1 {
   transform: translate(0);
   opacity: 1;
 }
-
-.article_display img {
-  width: 100vw;
+#article-display {
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px 5%;
+}
+#article-display img {
+  width: 100%;
   object-fit: cover;
 }
-.homme_header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  display: block;
-}
-.section {
+
+#article-display h3 {
   font-size: 20px;
   font-weight: 900;
   color: white;
@@ -133,10 +135,11 @@ h1 {
   align-items: center;
   gap: 10px;
   padding-bottom: 20px;
+  margin-top: 20px;
 }
-.achat {
+#achat {
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   font-size: 16px;
   color: white;
   border: none;
@@ -144,7 +147,10 @@ h1 {
   font-weight: bold;
   cursor: pointer;
 }
-#article_Button_Close {
+#achat a {
+  text-decoration: none;
+}
+#article-display > button {
   cursor: pointer;
   position: absolute;
   top: 20px;
@@ -155,14 +161,10 @@ h1 {
   color: white;
   border: none;
 }
-#menu_article_popup.active {
-  display: flex;
-  transform: translateY(0);
-  opacity: 1;
-}
-.menu_article_pop {
+
+#menu-article-popup {
   display: none;
-  background-color: var(--blue-500);
+  background-color: var(--blue-100);
   height: 100vh;
 }
 .button_close {
@@ -192,6 +194,10 @@ h1 {
   .all_collection {
     margin-top: 20px;
   }
+  #article-display {
+    margin: 40px 20%;
+    max-width: 40vw;
+  }
 }
 @media (min-width: 1024px) {
   .all_collection {
@@ -203,9 +209,6 @@ h1 {
   }
   .categories_list {
     font-size: 24px;
-  }
-  .article {
-    font-size: 30px;
   }
   .all_collection {
     gap: 60px;

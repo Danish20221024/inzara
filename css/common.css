@@ -13,6 +13,7 @@
   --blue-400: #6f90eb;
   --red-error: rgb(216, 10, 10);
   --blue-100: #b6c8f7;
+  --green-success: #38df38;
 }
 body {
   font-family: Barlow-Regular;
@@ -33,4 +34,49 @@ h4,
 h5,
 h6 {
   font-family: Karma-SemiBold;
+}
+
+main {
+  min-height: 60vh;
+  margin: 20px 20px;
+}
+a {
+  color: inherit;
+}
+
+/* menu categories list in the  menu-popup */
+.categories_list {
+  background-color: var(--blue-500);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sub_categories {
+  font-size: 18px;
+  text-align: left;
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 0;
+}
+.sub_categories a {
+  color: var(--main-blue);
+  text-decoration: none;
+}
+.categories_lists {
+  margin: 10px 0;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.menu_list_categories {
+  font-size: 20px;
+}
+
+@media (min-width: 1024px) {
+  main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
