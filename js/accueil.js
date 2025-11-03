@@ -1,40 +1,39 @@
 // Exécute le JS que qd le HTML (DOM) est chargé
 document.addEventListener("DOMContentLoaded", () => {
-
   // // popup display article
   const buttons = document.querySelectorAll(".categories_list");
   const sections = document.querySelectorAll(".collection_section");
-
-  // Au chargement : tout visible
-  sections.forEach((section) => {
-    section.style.display = "block";
-  });
-
+  const sectionHomme = document.querySelector(".homme");
+  const sectionFemme = document.querySelector(".femme");
+  const sectionEnfant = document.querySelector(".enfant");
+  const btnAll = document.querySelector(".all");
   // Gestion du clic sur chaque bouton
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      // className est la 2ème classe de button
       const className = button.classList[1];
 
-      // Si on clique sur "all", tout réapparaît
-      if (className === "all") {
-        sections.forEach((section) => {
-          section.style.display = "block";
-        });
-        return;
-      }
-
-      // Sinon, on cache tout d'abord
+      // on cache tout d'abord
       sections.forEach((section) => {
         section.style.display = "none";
       });
 
       // Et on affiche seulement la bonne section
       if (className === "man-list") {
-        document.querySelector(".homme").style.display = "block";
+        sectionHomme.style.display = "block";
+        btnAll.style.display = "block";
       } else if (className === "woman-list") {
-        document.querySelector(".femme").style.display = "block";
-      } else if (className === "childre-list") {
-        document.querySelector(".enfant").style.display = "block";
+        sectionFemme.style.display = "block";
+        btnAll.style.display = "block";
+      } else if (className === "children-list") {
+        sectionEnfant.style.display = "block";
+        btnAll.style.display = "block";
+      } else if (className === "all") {
+        // si c'est le bouton all, on affiche tout
+        sections.forEach((section) => {
+          section.style.display = "block";
+        });
+        btnAll.style.display = "none";
       }
     });
   });
@@ -42,41 +41,29 @@ document.addEventListener("DOMContentLoaded", () => {
   //   //popup display article homme
   const popupArticleDisplay = document.querySelector("#menu-article-popup");
   const articleCloseButton = document.querySelector("#article-display button");
-  const hommeImages = document.querySelectorAll(".homme .display_card img");
+  const smallImages = document.querySelectorAll(".display_card img");
   const popupImage = popupArticleDisplay.querySelector("#article-display img");
+  const popupTitle = document.querySelector("#article-title");
+  const popupPrice = document.querySelector("#article-price");
+  const popupDescription = document.querySelector("#article-description");
 
   // Ouvrir la popup au clic sur une image de la section Homme
-  hommeImages.forEach((img) => {
+  smallImages.forEach((img) => {
     img.addEventListener("click", () => {
       // on change la source de l'image dans la popup
       popupImage.src = img.src;
       popupImage.alt = img.alt;
+      popupTitle.textContent = img.dataset.title;
+      popupPrice.textContent = img.dataset.price;
+      popupDescription.textContent = img.dataset.description;
 
       // afficher la popup
       popupArticleDisplay.style.display = "flex";
-      popupArticleDisplay.style.transform = "translateY(0)";
-      popupArticleDisplay.style.opacity = "1";
     });
   });
 
   // Fermer la popup via le bouton X
   articleCloseButton.addEventListener("click", () => {
     popupArticleDisplay.style.display = "none";
-  });
-
- 
-  const categories = document.querySelectorAll(
-    ".man-list, .woman-list, .childre-list"
-  );
-  const closeBtn = document.querySelector(".all");
-
-  categories.forEach((category) => {
-    category.addEventListener("click", () => {
-      closeBtn.style.display = "flex";
-    });
-  });
-
-  closeBtn.addEventListener("click", () => {
-    closeBtn.style.display = "none";
   });
 });

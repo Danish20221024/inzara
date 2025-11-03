@@ -15,20 +15,19 @@ let btnOn1 = document.querySelector("#on1");
 let btnOff1 = document.querySelector("#off1");
 
 // Regex
-const phoneNumberRegex =
-  /^(?:(?:(?:\+|00)33[ ]?(?:\(0\)[ ]?)?)|0){1}[1-9]{1}([ .-]?)(?:\d{2}\1?){3}\d{2}$/;
+const phoneNumberRegex = /^0[167][1-9]{8}$/;
 const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
 
 // numero de telephone
 telephoneNumber.addEventListener("input", function () {
-  console.log(telephoneNumber);
-  if (!telephoneNumber.value || telephoneNumber.value.match(phoneNumberRegex)) {
-    console.log("BON FORMAT !");
+  // console.log(telephoneNumber);
+  if (telephoneNumber.value.match(phoneNumberRegex) || !telephoneNumber.value) {
+    // console.log("BON FORMAT !");
     telephoneNumber.style.border = "0px";
     telephoneFormatError.style.display = "none";
   } else {
     telephoneNumber.style.border = "1px solid red";
-    console.log("C'est pas bon!");
+    // console.log("C'est pas bon!");
     telephoneFormatError.style.display = "block";
   }
 });
@@ -79,7 +78,7 @@ form.addEventListener("submit", function (e) {
 
   // s'il y a pas d'erreur,  "votre mail a été bien envoyer"
   if (!error) {
-    console.log("Votre mail a été bien envoyé");
+    console.log("Votre message a été bien envoyé");
     validation_message.style.display = "block";
     form.reset();
   }

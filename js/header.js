@@ -1,9 +1,9 @@
-// // popup menu burger
-const burgerButton = document.querySelector("#menu");
-const closeButton = document.querySelector("#buttonClose");
-const popup = document.querySelector("#menu_popup");
+document.addEventListener("DOMContentLoaded", () => {
+  // // popup menu burger
+  const burgerButton = document.querySelector("#menu");
+  const closeButton = document.querySelector("#buttonClose");
+  const popup = document.querySelector("#menu_popup");
 
-if (burgerButton && closeButton && popup) {
   // Ouvrir le menu
   burgerButton.addEventListener("click", () => {
     popup.classList.add("active");
@@ -20,4 +20,4 @@ if (burgerButton && closeButton && popup) {
       popup.classList.remove("active");
     }
   });
-}
+});

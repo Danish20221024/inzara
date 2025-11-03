@@ -74,6 +74,11 @@ a {
   font-size: 20px;
 }
 
+@media (min-width: 768px) {
+  main {
+    min-height: 80vh;
+  }
+}
 @media (min-width: 1024px) {
   main {
     margin-left: 10%;
