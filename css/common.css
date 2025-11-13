@@ -1,11 +1,11 @@
 /*Header*/
 @font-face {
   font-family: Barlow-Regular;
-  src: url(./font/Barlow/Barlow-Regular.ttf);
+  src: url(../font/Barlow/Barlow-Regular.ttf);
 }
 @font-face {
   font-family: Karma-SemiBold;
-  src: url(./font/Karma/Karma-SemiBold.ttf);
+  src: url(../font/Karma/Karma-SemiBold.woff2);
 }
 :root {
   --main-blue: #0e2f82;

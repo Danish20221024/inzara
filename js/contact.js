@@ -35,12 +35,12 @@ telephoneNumber.addEventListener("input", function () {
 // l'adresse mail
 email.addEventListener("input", function () {
   if (email.value.match(emailRegex)) {
-    console.log("BON FORMAT !");
+    // console.log("BON FORMAT !");
     email.style.border = "0px";
     emailFormatError.style.display = "none";
   } else {
     email.style.border = "1px solid red";
-    console.log("C'est pas bon!");
+    // console.log("C'est pas bon!");
     emailFormatError.style.display = "block";
   }
 });
@@ -48,10 +48,10 @@ email.addEventListener("input", function () {
 //  confirmation de mail
 confirmationEmail.addEventListener("input", function () {
   if (confirmationEmail.value === email.value) {
-    console.log("match mail");
+    // console.log("match mail");
     emailConfirmationError.style.display = "none";
   } else {
-    console.log("C'est pas bon!");
+    // console.log("C'est pas bon!");
     emailConfirmationError.style.display = "block";
   }
 });
